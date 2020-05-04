@@ -19,19 +19,22 @@ import kotlinx.android.synthetic.main.fragment_first.*
 
 class FirstFragment : Fragment() {
     private lateinit var rvList: RecyclerView
-    private var list: ArrayList<NewList> = arrayListOf()
+    private var list: ArrayList<NewList> = ArrayList()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_first, container, false)
+        val view = inflater.inflate(R.layout.fragment_first, container, false)
+        rvList = view.findViewById(R.id.rv_list)
+        rvList.layoutManager = LinearLayoutManager(activity)
+        list.addAll(listData)
+        rvList.setHasFixedSize(true)
+        rvList.adapter = com.project.viewpager.Adapter.ListAdapter(list)
 
-        rvList.layoutManager = LinearLayoutManager(this.context)
-        val listAdapter = (list)
-        list.addAll(listAdapter)
 
+        return view
     }
 
 }

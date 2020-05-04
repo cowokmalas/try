@@ -1,5 +1,6 @@
 package com.project.viewpager.Adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,11 +9,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.project.viewpager.NewList
 import com.project.viewpager.R
 
-class ListAdapter(private var lis:ArrayList<NewList>) :RecyclerView.Adapter<ListAdapter.ListViewHolder>(){
+class ListAdapter(private val lis: ArrayList<NewList>) :
+    RecyclerView.Adapter<ListAdapter.ListViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
-        val view:View=LayoutInflater.from(parent.context).inflate(R.layout.item_list,parent,false)
+        val view: View =
+            LayoutInflater.from(parent.context).inflate(R.layout.item_list, parent, false)
         return ListViewHolder(view)
     }
 
@@ -22,15 +25,13 @@ class ListAdapter(private var lis:ArrayList<NewList>) :RecyclerView.Adapter<List
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        val list=lis[position]
-        holder.tvName.text=list.name
-        holder.tvDesk.text=list.desk
-
+        holder.tvName.text = lis.get(position).name
+        holder.tvDesk.text = lis.get(position).desk
     }
 
-    inner class ListViewHolder(itemView:View):RecyclerView.ViewHolder(itemView) {
-        val tvName:TextView=itemView.findViewById(R.id.tv_name)
-        val tvDesk:TextView=itemView.findViewById(R.id.tv_deskripsi)
+    inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val tvName: TextView = itemView.findViewById(R.id.tv_name)
+        val tvDesk: TextView = itemView.findViewById(R.id.tv_deskripsi)
 
     }
 }
