@@ -7,6 +7,8 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingTop="7sp"
+        android:paddingBottom="7sp"
         android:background="@android:color/darker_gray">
 
         <TextView
@@ -14,6 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Name List"
+            android:paddingStart="7sp"
             android:textSize="30sp" />
 
         <TextView
@@ -22,6 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_name"
             android:text="deskripsi"
+            android:paddingStart="7sp"
             android:textSize="20sp" />
 
 
