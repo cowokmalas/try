@@ -29,6 +29,7 @@ class FirstFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_first, container, false)
         rvList = view.findViewById(R.id.rv_list)
         rvList.layoutManager = LinearLayoutManager(activity)
+        list.clear()
         list.addAll(listData)
         rvList.setHasFixedSize(true)
         rvList.adapter = com.project.viewpager.Adapter.ListAdapter(list)

@@ -23,6 +23,6 @@
         android:layout_marginTop="14dp"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        tools:src="@drawable/sa" />
+        android:src="@drawable/sa" />
 
 </LinearLayout>
